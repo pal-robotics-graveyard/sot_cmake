@@ -1,0 +1,7 @@
+# Prepend cmake modules from source directory to the cmake module path
+if(@DEVELSPACE@)
+  set(SOT_CMAKE_DIR @CMAKE_CURRENT_SOURCE_DIR@/cmake)
+else()
+  set(SOT_CMAKE_DIR @CMAKE_INSTALL_PREFIX@/@CATKIN_PACKAGE_SHARE_DESTINATION@/cmake)
+endif()
+
