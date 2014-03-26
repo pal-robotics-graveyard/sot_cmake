@@ -73,7 +73,7 @@ MACRO(_SETUP_PROJECT_HEADER)
 
   # Generate deprecated.hh header.
   CONFIGURE_FILE(
-    ${CMAKE_CURRENT_SOURCE_DIR}/cmake/deprecated.hh.cmake
+    ${SOT_CMAKE_DIR}/deprecated.hh.cmake
     ${CMAKE_CURRENT_BINARY_DIR}/include/${HEADER_DIR}/deprecated.hh
     @ONLY
     )
@@ -84,7 +84,7 @@ MACRO(_SETUP_PROJECT_HEADER)
     )
   # Generate warning.hh header.
   CONFIGURE_FILE(
-    ${CMAKE_CURRENT_SOURCE_DIR}/cmake/warning.hh.cmake
+    ${SOT_CMAKE_DIR}/warning.hh.cmake
     ${CMAKE_CURRENT_BINARY_DIR}/include/${HEADER_DIR}/warning.hh
     @ONLY
     )
@@ -101,7 +101,7 @@ MACRO(_SETUP_PROJECT_HEADER)
   # in the top-level directory of the build tree.
   # Therefore it must not be inluded by any distributed header.
   CONFIGURE_FILE(
-    ${CMAKE_CURRENT_SOURCE_DIR}/cmake/config.h.cmake
+    ${SOT_CMAKE_DIR}/config.h.cmake
     ${CMAKE_CURRENT_BINARY_DIR}/config.h
     )
   INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/config.h
@@ -134,7 +134,7 @@ FUNCTION(GENERATE_CONFIGURATION_HEADER
     HEADER_DIR FILENAME LIBRARY_NAME EXPORT_SYMBOL)
   # Generate the header.
   CONFIGURE_FILE(
-    ${CMAKE_CURRENT_SOURCE_DIR}/cmake/config.hh.cmake
+    ${SOT_CMAKE_DIR}/config.hh.cmake
     ${CMAKE_CURRENT_BINARY_DIR}/include/${HEADER_DIR}/${FILENAME}
     @ONLY
     )

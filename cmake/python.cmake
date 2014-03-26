@@ -75,7 +75,7 @@ MACRO(DYNAMIC_GRAPH_PYTHON_MODULE SUBMODULENAME LIBRARYNAME TARGETNAME)
 
   ADD_LIBRARY(${PYTHON_MODULE}
     MODULE
-    ${PROJECT_SOURCE_DIR}/cmake/dynamic_graph/python-module-py.cc)
+    ${SOT_CMAKE_DIR}/dynamic_graph/python-module-py.cc)
 
   FILE(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/src/dynamic_graph/${SUBMODULENAME})
   SET_TARGET_PROPERTIES(${PYTHON_MODULE}
@@ -103,7 +103,7 @@ MACRO(DYNAMIC_GRAPH_PYTHON_MODULE SUBMODULENAME LIBRARYNAME TARGETNAME)
   ENDFOREACH(ENTITY ${NEW_ENTITY_CLASS})
 
   CONFIGURE_FILE(
-    ${PROJECT_SOURCE_DIR}/cmake/dynamic_graph/submodule/__init__.py.cmake
+    ${SOT_CMAKE_DIR}/dynamic_graph/submodule/__init__.py.cmake
     ${PROJECT_BINARY_DIR}/src/dynamic_graph/${SUBMODULENAME}/__init__.py
     )
 
