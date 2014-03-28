@@ -74,11 +74,11 @@ MACRO(_SETUP_PROJECT_HEADER)
   # Generate deprecated.hh header.
   CONFIGURE_FILE(
     ${SOT_CMAKE_DIR}/deprecated.hh.cmake
-    ${CMAKE_CURRENT_BINARY_DIR}/include/${HEADER_DIR}/deprecated.hh
+    ${CATKIN_DEVEL_PREFIX}/include/${HEADER_DIR}/deprecated.hh
     @ONLY
     )
   INSTALL(FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/include/${HEADER_DIR}/deprecated.hh
+    ${CATKIN_DEVEL_PREFIX}/include/${HEADER_DIR}/deprecated.hh
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${HEADER_DIR}
     PERMISSIONS OWNER_READ GROUP_READ WORLD_READ OWNER_WRITE
     )
